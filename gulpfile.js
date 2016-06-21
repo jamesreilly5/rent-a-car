@@ -17,6 +17,7 @@ var connect = require('gulp-connect');
 var plumber = require('gulp-plumber');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
+var cors = require('cors');
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
@@ -24,6 +25,12 @@ var dependencies = [
 	'react',
   'react-addons-test-utils'
 ];
+
+// var cors = function (req, res, next) {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader('Access-Control-Allow-Headers', '*');
+//   next();
+// };
 
 var browserifyTask = function (options) {
 
@@ -175,7 +182,10 @@ gulp.task('default', function () {
 
   connect.server({
     root: 'build/',
-    port: 8889
+    port: 8889,
+	middleware: function () {
+      return [cors()];
+    }
   });
 
 });

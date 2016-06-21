@@ -10,3 +10,28 @@ footer {
 	padding: 1em;
 	margin-top: 2em;
 }
+
+/* car details */
+.car-details {
+	border: 1px solid #e3e3e3;
+	margin: 1em;
+	padding: 2em;
+	line-height: 2em;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	background-color: #ffffff;
+	color: #697684;
+
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+.car-stat {
+	padding: 0.25em;
+}
+
+.stat-type {
+	font-weight: 400;
+}

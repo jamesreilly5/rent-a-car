@@ -8,6 +8,7 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
+    "cors": "^2.7.1",
     "date-format": "0.0.2",
     "glob": "^7.0.3",
     "gulp": "^3.9.1",
