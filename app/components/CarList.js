@@ -40,23 +40,24 @@ var CarList = React.createClass({
         this.setState({ error: event.body['error'] });
     },
 
-    sort: function(e) {
+    currentSortProperty: function() {
         var e = document.getElementById('car-sorter');
-        var sortBy = e.options[e.selectedIndex].value;
-        this.setState(
-            {
-                carList: SortUtils.sortBy(this.state.carList, sortBy),
-                pickupInfo: this.state.pickupInfo
-            }
-        );
+        return e.options[e.selectedIndex].value;
+    },
+
+    sort: function(e) {
+        this.setState({
+            carList: SortUtils.sortBy(this.state.carList, this.currentSortProperty()),
+            pickupInfo: this.state.pickupInfo
+        });
     },
 
     render: function() {
         if (this.state.error) { return <Error errorMessage={this.state.error} /> }
         if (!this.state.carList) { return <Spinner /> }
 
-        var carList = this.state.carList;
-        var pickupInfo = this.state.pickupInfo;
+        var carList = this.state.carList,
+            pickupInfo = this.state.pickupInfo;
 
         return (
             <div clasName='container god-directory'>
@@ -65,12 +66,19 @@ var CarList = React.createClass({
                     <h2 className='text-center'>Awesome cars without the loan final notice</h2>
 
                     <div className='row'>
-                        <div className='col-md-4 col-md-offset-2'>
-                            <select id='car-sorter' className="form-control" onChange={this.sort}>
-                                <option value='rate' defaultValue>Lowest Price</option>
-                                <option value='doors'>Number of doors</option>
-                            </select>
+                        <div className='col-md-8 col-md-offset-2 search-options'>
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    <label>Sort by</label>
+                                    <select id='car-sorter' className="form-control" onChange={this.sort}>
+                                        <option value='rate' defaultValue>Lowest Price</option>
+                                        <option value='doors'>Number of doors</option>
+                                        <option value='bags'>Bag Capacity</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </section>
 
