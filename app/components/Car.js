@@ -25,7 +25,7 @@ var Car = React.createClass({
                     </div>
                     <div className='row car-stat'>
                         <span className='col-xs-5 stat-type'>Air Conditioning:</span>
-                        <span className='col-xs-7'>{this.props.airConditioning}</span>
+                        <span className='col-xs-7'>{ this.props.airConditioning ? 'Yes' : 'No' }</span>
                     </div>
                     <div className='row car-stat'>
                         <span className='col-xs-5 stat-type'>Transmission:</span>
