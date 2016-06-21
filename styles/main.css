@@ -23,6 +23,10 @@ footer {
 	margin-bottom: 1em;
 }
 
+.hidden {
+	display: none;
+}
+
 /* car details */
 
 .car-preview {

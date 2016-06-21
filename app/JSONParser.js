@@ -17,7 +17,8 @@ var parseCar = function(carData, index) {
         description: carData['Vehicle']['VehMakeModel']['@Name'],
         imageThumbnail: carData['Vehicle']['PictureURL'],
         rate: parseFloat(carData['TotalCharge']['@RateTotalAmount']),
-        currency: carData['TotalCharge']['@CurrencyCode']
+        currency: carData['TotalCharge']['@CurrencyCode'],
+        visible: true
     };
 };
 

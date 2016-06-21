@@ -5,7 +5,7 @@ var Collapse = require('react-collapse');
 var Car = React.createClass({
 	render: function() {
 		return (
-            <div className='col-md-6'>
+            <div className={(this.props.visible ? ' ' : 'hidden ') + 'col-md-6'}>
                 <div className='car-details'>
                     <h3 className='text-center'>{this.props.description}</h3>
                     <div className='car-preview'>

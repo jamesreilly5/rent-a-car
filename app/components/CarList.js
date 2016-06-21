@@ -45,9 +45,21 @@ var CarList = React.createClass({
         return e.options[e.selectedIndex].value;
     },
 
+    currentFilterProperty: function() {
+        var e = document.getElementById('car-filter');
+        return e.options[e.selectedIndex].value;
+    },
+
     sort: function(e) {
         this.setState({
             carList: SortUtils.sortBy(this.state.carList, this.currentSortProperty()),
+            pickupInfo: this.state.pickupInfo
+        });
+    },
+
+    filter: function(e) {
+        this.setState({
+            carList: SortUtils.filterBy(this.state.carList, 'description', this.currentFilterProperty()),
             pickupInfo: this.state.pickupInfo
         });
     },
@@ -74,6 +86,18 @@ var CarList = React.createClass({
                                         <option value='rate' defaultValue>Lowest Price</option>
                                         <option value='doors'>Number of doors</option>
                                         <option value='bags'>Bag Capacity</option>
+                                    </select>
+                                </div>
+                                <div className='col-md-6'>
+                                    <label>Manufacturer</label>
+                                    <select id='car-filter' className="form-control" onChange={this.filter}>
+                                        <option value='' defaultValue>All</option>
+                                        <option value='Cadillac' defaultValue>Cadillac</option>
+                                        <option value='Chevrolet' defaultValue>Chevrolet</option>
+                                        <option value='Chrysler' defaultValue>Chrysler</option>
+                                        <option value='Ford' defaultValue>Ford</option>
+                                        <option value='Kia' defaultValue>Kia</option>
+                                        <option value='Toyota' defaultValue>Toyota</option>
                                     </select>
                                 </div>
                             </div>
@@ -108,6 +132,7 @@ var CarList = React.createClass({
                                         imageThumbnail={car.imageThumbnail}
                                         rate={car.rate}
                                         currency={car.currency}
+                                        visible={car.visible}
                                     />
                         })
                     }

@@ -12,11 +12,19 @@ describe('SortUtils', function() {
     });
 
     describe('sortBy', function() {
-        var jsonToSort = require('./fixtures/expectedParsedData.json'),
-            sortedJson = require('./fixtures/sortedJsonByPrice.json');
+        var sortedJson = require('./fixtures/sortedJsonByPrice.json');
 
         it('sorts by price', function() {
             expect(SortUtils.sortBy(jsonToSort['suppliers'], 'rate')).toEqual(sortedJson);
+        });
+    });
+
+    describe('filterBy', function() {
+        var jsonToFilter = require('./fixtures/expectedParsedData.json'),
+            filteredJson = require('./fixtures/filteredJsonByDescription.json');
+
+        it('sorts by price', function() {
+            expect(SortUtils.filterBy(jsonToSort['suppliers'], 'description', 'Toyota Rav4 or similar')).toEqual(filteredJson);
         });
     });
 
