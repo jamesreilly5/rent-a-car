@@ -15,7 +15,7 @@
                 "doors": 5,
                 "description": "Toyota Rav4 or similar",
                 "imageThumbnail": "https://cdn.cartrawler.com/otaimages/toyota/rav_4_nologo.jpg",
-                "rate": "878.98",
+                "rate": 878.98,
                 "currency": "CAD"
             },
             {
@@ -32,7 +32,7 @@
                 "doors": 4,
                 "description": "Chrysler 300 or similar",
                 "imageThumbnail": "https://cdn.cartrawler.com/otaimages/chrysler/300_nologo.jpg",
-                "rate": "851.01",
+                "rate": 851.01,
                 "currency": "CAD"
             }
         ],
@@ -51,7 +51,7 @@
                 "doors": 5,
                 "description": "Toyota Rav4 or similar",
                 "imageThumbnail": "https://cdn.cartrawler.com/otaimages/toyota/rav_4_nologo.jpg",
-                "rate": "851.03",
+                "rate": 851.03,
                 "currency": "CAD"
             }
         ]

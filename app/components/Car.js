@@ -1,5 +1,7 @@
 var React = require('react');
 
+var Collapse = require('react-collapse');
+
 var Car = React.createClass({
 	render: function() {
 		return (
@@ -62,6 +64,12 @@ var Car = React.createClass({
                             <h3>{this.props.currency} {this.props.rate}</h3>
                         </div>
                     </div>
+
+
+                    <Collapse isOpened={false}>
+                        <div>Random content</div>
+                    </Collapse>
+
                 </div>
             </div>
 		)

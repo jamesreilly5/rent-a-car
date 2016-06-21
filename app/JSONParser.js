@@ -16,7 +16,7 @@ var parseCar = function(carData, index) {
         doors: parseInt(carData['Vehicle']['@DoorCount']),
         description: carData['Vehicle']['VehMakeModel']['@Name'],
         imageThumbnail: carData['Vehicle']['PictureURL'],
-        rate: carData['TotalCharge']['@RateTotalAmount'],
+        rate: parseFloat(carData['TotalCharge']['@RateTotalAmount']),
         currency: carData['TotalCharge']['@CurrencyCode']
     };
 };

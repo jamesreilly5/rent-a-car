@@ -21,7 +21,7 @@ var CarList = React.createClass({
 	componentWillMount: function() {
 		var self = this;
 		// Api.get(API_ENDPOINT, this.handleError, this.handleApiSearchSuccess);
-        var validResponseData = require('./../../specs/fixtures/apiResponse.json');
+        var validResponseData = require('./../../specs/fixtures/feed.json');
         this.handleApiSearchSuccess({ body: validResponseData });
 	},
 
@@ -37,7 +37,7 @@ var CarList = React.createClass({
         if (this.state.error) { return <Error errorMessage={this.state.error} /> }
         if (!this.state.data.suppliers) { return <Spinner /> }
 
-        var carList = SortUtils.getCars(this.state.data);
+        var carList = SortUtils.sortByRate(this.state.data);
 
         return (
             <div clasName='container god-directory'>
