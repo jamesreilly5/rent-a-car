@@ -3,10 +3,13 @@ var React = require('react');
 var Car = require('./Car');
 var Spinner = require('./Error');
 var Spinner = require('./Spinner');
+var PickupInfo = require('./PickupInfo');
 
 var JsonParser = require('./../JSONParser');
 var Api = require('./../ApiClient');
 var SortUtils = require('./../SortUtils');
+
+var format = require('date-format');
 
 // In a proper deployment situation these credentials would be pulled down
 // from a config in an S3 bucket. Hard-coded for the purpose of this exercise.
@@ -38,12 +41,22 @@ var CarList = React.createClass({
         if (!this.state.data.suppliers) { return <Spinner /> }
 
         var carList = SortUtils.sortByRate(this.state.data);
+        var pickupInfo = this.state.data.pickupInfo;
 
         return (
             <div clasName='container god-directory'>
                 <section className='hero jumbotron'>
                     <h1 className='text-center'>Ultimate rental directory</h1>
                     <h2 className='text-center'>Awesome cars without the loan final notice</h2>
+                </section>
+
+                <section>
+                    <PickupInfo pickupDate={format.asString('dd/MM/yyyy', pickupInfo.pickupDate)}
+                                returnDate={format.asString('dd/MM/yyyy', pickupInfo.returnDate)}
+                                pickupTime={format.asString('hh:mm', pickupInfo.pickupDate)}
+                                returnTime={format.asString('hh:mm', pickupInfo.returnDate)}
+                                pickupLocation={pickupInfo.pickupLocation}
+                                returnLocation={pickupInfo.returnLocation} />
                 </section>
 
                 <section className='container'>
