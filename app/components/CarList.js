@@ -63,7 +63,7 @@ var CarList = React.createClass({
             <div clasName='container god-directory'>
                 <section className='hero jumbotron'>
                     <h1 className='text-center'>Ultimate rental directory</h1>
-                    <h2 className='text-center'>Awesome cars without the loan final notice</h2>
+                    <h2 className='text-center'>Awesome cars, without the loan sharks</h2>
 
                     <div className='row'>
                         <div className='col-md-8 col-md-offset-2 search-options'>

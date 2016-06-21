@@ -28,6 +28,8 @@ footer {
 .car-preview {
 	text-align: center;
 	margin: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 .car-preview img {
@@ -63,7 +65,13 @@ footer {
 	text-align: center;
 }
 
+.pricing-details {
+	margin-top: 1em;
+	border-top: 1px solid #e3e3e3;
+}
+
 .search-options {
+	margin-top: 2em;
 	background-color: #464646;
 	background: rgba(70,70,70,0.3);
 	border: 1px solid rgba(255,255,255,0.3);
