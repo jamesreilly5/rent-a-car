@@ -29,25 +29,49 @@ var CarList = React.createClass({
 	},
 
     handleApiSearchSuccess: function(event) {
-        this.setState({ data: JsonParser.parse(event.body) });
+        var parsedData = JsonParser.parse(event.body)
+        this.setState({
+            carList: SortUtils.sortBy(parsedData['suppliers'], 'rate'),
+            pickupInfo: parsedData.pickupInfo
+        });
     },
 
     handleError: function(event) {
         this.setState({ error: event.body['error'] });
     },
 
+    sort: function(e) {
+        var e = document.getElementById('car-sorter');
+        var sortBy = e.options[e.selectedIndex].value;
+        this.setState(
+            {
+                carList: SortUtils.sortBy(this.state.carList, sortBy),
+                pickupInfo: this.state.pickupInfo
+            }
+        );
+    },
+
     render: function() {
         if (this.state.error) { return <Error errorMessage={this.state.error} /> }
-        if (!this.state.data.suppliers) { return <Spinner /> }
+        if (!this.state.carList) { return <Spinner /> }
 
-        var carList = SortUtils.sortByRate(this.state.data);
-        var pickupInfo = this.state.data.pickupInfo;
+        var carList = this.state.carList;
+        var pickupInfo = this.state.pickupInfo;
 
         return (
             <div clasName='container god-directory'>
                 <section className='hero jumbotron'>
                     <h1 className='text-center'>Ultimate rental directory</h1>
                     <h2 className='text-center'>Awesome cars without the loan final notice</h2>
+
+                    <div className='row'>
+                        <div className='col-md-4 col-md-offset-2'>
+                            <select id='car-sorter' className="form-control" onChange={this.sort}>
+                                <option value='rate' defaultValue>Lowest Price</option>
+                                <option value='doors'>Number of doors</option>
+                            </select>
+                        </div>
+                    </div>
                 </section>
 
                 <section>

@@ -7,7 +7,7 @@ describe('SortUtils', function() {
 
     describe('getCars', function() {
         it('returns an array of car hashes', function() {
-            expect(SortUtils.getCars(jsonToSort)).toEqual(carsJson);
+            expect(SortUtils.getCars(jsonToSort['suppliers'])).toEqual(carsJson);
         });
     });
 
@@ -16,7 +16,7 @@ describe('SortUtils', function() {
             sortedJson = require('./fixtures/sortedJsonByPrice.json');
 
         it('sorts by price', function() {
-            expect(SortUtils.sortByRate(jsonToSort, 'price', true)).toEqual(sortedJson);
+            expect(SortUtils.sortBy(jsonToSort['suppliers'], 'rate')).toEqual(sortedJson);
         });
     });
 

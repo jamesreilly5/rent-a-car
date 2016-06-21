@@ -40,10 +40,6 @@ var Car = React.createClass({
                         <span className='col-xs-7'>{this.props.driveType}</span>
                     </div>
                     <div className='row car-stat'>
-                        <span className='col-xs-5 stat-type'>No.of seats:</span>
-                        <span className='col-xs-7'>{this.props.seats}</span>
-                    </div>
-                    <div className='row car-stat'>
                         <span className='col-xs-5 stat-type'>Bag capacity:</span>
                         <span className='col-xs-7'>{this.props.bags}</span>
                     </div>
@@ -64,12 +60,6 @@ var Car = React.createClass({
                             <h3>{this.props.currency} {this.props.rate}</h3>
                         </div>
                     </div>
-
-
-                    <Collapse isOpened={false}>
-                        <div>Random content</div>
-                    </Collapse>
-
                 </div>
             </div>
 		)
