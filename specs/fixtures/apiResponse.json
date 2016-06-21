@@ -49,8 +49,8 @@
                                 "PictureURL": "https://cdn.cartrawler.com/otaimages/chrysler/300_nologo.jpg"
                             },
                             "TotalCharge": {
-                                "@RateTotalAmount": "851.03",
-                                "@EstimatedTotalAmount": "851.03",
+                                "@RateTotalAmount": "851.01",
+                                "@EstimatedTotalAmount": "851.01",
                                 "@CurrencyCode": "CAD"
                             }
                         }
@@ -80,8 +80,8 @@
                                 "PictureURL": "https://cdn.cartrawler.com/otaimages/toyota/rav_4_nologo.jpg"
                             },
                             "TotalCharge": {
-                                "@RateTotalAmount": "878.98",
-                                "@EstimatedTotalAmount": "878.98",
+                                "@RateTotalAmount": "851.03",
+                                "@EstimatedTotalAmount": "851.03",
                                 "@CurrencyCode": "CAD"
                             }
                         }
