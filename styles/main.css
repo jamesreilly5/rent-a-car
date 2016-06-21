@@ -2,7 +2,7 @@
 
 body {
 	background-color: #e3e3e3;
-	color: black;
+	color: white;
 }
 
 footer {
@@ -11,7 +11,29 @@ footer {
 	margin-top: 2em;
 }
 
+.hero {
+    background-image: url("hero2.png");
+    background-color: #cccccc;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0px -200px;
+	text-shadow: 0 2px 2px #333f48;
+	border-bottom: 1px solid #e3e3e3;
+	height: 450px;
+	margin-bottom: 1em;
+}
+
 /* car details */
+
+.car-preview {
+	text-align: center;
+	margin: 1em;
+}
+
+.car-preview img {
+	height: 120px;
+}
+
 .car-details {
 	border: 1px solid #e3e3e3;
 	margin: 1em;
@@ -29,9 +51,32 @@ footer {
 }
 
 .car-stat {
-	padding: 0.25em;
+	padding: 0.1em;
 }
 
 .stat-type {
 	font-weight: 400;
+}
+
+.pricing-details .car-stat {
+	font-weight: 400;
+	text-align: center;
+}
+
+/* spinner */
+.spinner {
+	margin-top: 3em;
+	color: #333f48;
+}
+
+/* Error page */
+.error-icon {
+	background-image: url("error-icon.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: contain;
+	text-shadow: 0 1px 1px #333f48;
+	border-bottom: 1px solid #e3e3e3;
+	height: 200px;
+	text-align: center;
 }

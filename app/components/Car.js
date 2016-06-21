@@ -5,6 +5,10 @@ var Car = React.createClass({
 		return (
             <div className='col-md-6'>
                 <div className='car-details'>
+                    <h3 className='text-center'>{this.props.description}</h3>
+                    <div className='car-preview'>
+                        <img src={this.props.imageThumbnail} />
+                    </div>
                     <div className='row car-stat'>
                         <span className='col-xs-5 stat-type'>Status:</span>
                         <span className='col-xs-7'>{this.props.status}</span>
@@ -53,21 +57,10 @@ var Car = React.createClass({
                         <span className='col-xs-5 stat-type'>No. of doors:</span>
                         <span className='col-xs-7'>{this.props.doors}</span>
                     </div>
-                    <div className='row car-stat'>
-                        <span className='col-xs-5 stat-type'>TODO: move this:</span>
-                        <span className='col-xs-7'>{this.props.description}</span>
-                    </div>
-                    <div className='row car-stat'>
-                        <span className='col-xs-5 stat-type'>TODO: move this</span>
-                        <span className='col-xs-7'>{this.props.imageThumbnail}</span>
-                    </div>
-                    <div className='row car-stat'>
-                        <span className='col-xs-5 stat-type'>TODO: move this</span>
-                        <span className='col-xs-7'>{this.props.rate}</span>
-                    </div>
-                    <div className='row car-stat'>
-                        <span className='col-xs-5 stat-type'>TODO: move this</span>
-                        <span className='col-xs-7'>{this.props.currency}</span>
+                    <div className='pricing-details'>
+                        <div className='row car-stat'>
+                            <h3>{this.props.currency} {this.props.rate}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
