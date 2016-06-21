@@ -30,12 +30,22 @@ var parseSuppliers = function(supplierData, index) {
     return carsData;
 };
 
+var parsePickupInfo =  function(pickupData) {
+    return {
+        pickupDate: new Date(Date.parse(pickupData['@PickUpDateTime'])),
+        returnDate: new Date(Date.parse(pickupData['@ReturnDateTime'])),
+        pickupLocation: pickupData['PickUpLocation']['@Name'],
+        returnLocation: pickupData['ReturnLocation']['@Name']
+    }
+};
+
 module.exports = {
     parse: function(data) {
-        model = { suppliers: {} };
+        model = { suppliers: {}, pickupInfo: {} };
 
         // TODO: Consider what happens when a huge array is given (i.e. should we paginate results)
         if(!data) { return model }
+        model.pickupInfo = parsePickupInfo(data[0]['VehAvailRSCore']['VehRentalCore']);
 
         var suppliersData = data[0]['VehAvailRSCore']['VehVendorAvails'];
         for(var i = 0; i < suppliersData.length; i++) {

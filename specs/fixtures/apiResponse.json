@@ -1,6 +1,16 @@
 [
     {
         "VehAvailRSCore": {
+            "VehRentalCore": {
+                "@PickUpDateTime": "2014-09-22T10:00:00Z",
+                "@ReturnDateTime": "2014-10-06T10:00:00Z",
+                "PickUpLocation": {
+                    "@Name": "Las Vegas - Airport"
+                },
+                "ReturnLocation": {
+                    "@Name": "Las Vegas - Airport"
+                }
+            },
             "VehVendorAvails": [
                 {
                     "Vendor": {

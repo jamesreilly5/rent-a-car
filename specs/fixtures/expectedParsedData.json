@@ -1,4 +1,10 @@
 {
+    "pickupInfo": {
+        "pickupDate": "2014-09-22T10:00:00Z",
+        "returnDate": "2014-10-06T10:00:00Z",
+        "pickupLocation": "Las Vegas - Airport",
+        "returnLocation": "Las Vegas - Airport"
+    },
     "suppliers": {
         "ALAMO": [
             {
