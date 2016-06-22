@@ -64,6 +64,10 @@ footer {
 	font-weight: 400;
 }
 
+.info-toggle:hover {
+	cursor: pointer;
+}
+
 .pricing-details .car-stat {
 	font-weight: 400;
 	text-align: center;
