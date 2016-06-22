@@ -14,6 +14,8 @@ React app that displays a JSON feed of rental cars. The app was built for a tech
 - Run `NODE_ENV=development gulp`
 - Go to `localhost:8889` to display the app
 
+Alternatively, just open index.html in the dist folder. It should be all compiled!
+
 **Run tests in browser**
 
 Go to `localhost:8889/testrunner.html` to see your tests
