@@ -2,7 +2,7 @@ var _ = require('underscore');
 
 var compare = function compare(property) {
     var sortOrder = 1;
-    if(property[0] === "-") {
+    if(property[0] === '-') {
         sortOrder = -1;
         property = property.substr(1);
     }

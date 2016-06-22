@@ -5,6 +5,10 @@ var FILTER_SELECT_ID = 'car-filter';
 
 var FilterPanel = React.createClass({
 
+    componentDidMount: function() {
+        var e = document.getElementById(SORT_SELECT_ID).value = this.props.defaultSort;
+	},
+
     currentSortProperty: function() {
         var e = document.getElementById(SORT_SELECT_ID);
         return e.options[e.selectedIndex].value;
