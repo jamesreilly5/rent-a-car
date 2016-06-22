@@ -12,11 +12,11 @@ footer {
 }
 
 .hero {
-    background-image: url("hero2.png");
+    background-image: url("hero3.png");
     background-color: #cccccc;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 0px -200px;
+	/*background-position: 0px -200px;*/
 	text-shadow: 0 2px 2px #333f48;
 	border-bottom: 1px solid #e3e3e3;
 	height: 450px;
@@ -147,4 +147,35 @@ footer {
 
 .toggle-box:checked + label:before {
   content: "\2212";
+}
+
+
+@media (max-width: 1224px) {
+	.search-options {
+    	margin-top: 1em;
+    	padding: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-position: -100px 0px;
+  }
+
+  .search-options {
+  	margin-top: 0.5em;
+  	padding: 2em;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero {
+    background-position: -200px 0px;
+  }
+}
+
+@media (max-width: 414px) {
+  .hero {
+    background-position: -270px 0px;
+  }
 }

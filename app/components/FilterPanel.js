@@ -33,9 +33,9 @@ var FilterPanel = React.createClass({
 	render: function() {
 		return (
             <div className='row'>
-                <div className='col-md-8 col-md-offset-2 search-options'>
+                <div className='col-sm-8 col-sm-offset-2 search-options'>
                     <div className='row'>
-                        <div className='col-md-6'>
+                        <div className='col-sm-6'>
                             <label>Sort by</label>
                             <select id={SORT_SELECT_ID} className="form-control" onChange={this.sort}>
                                 <option value='rate' defaultValue>Lowest Price</option>
@@ -44,7 +44,7 @@ var FilterPanel = React.createClass({
                                 <option value='description'>Description</option>
                             </select>
                         </div>
-                        <div className='col-md-6'>
+                        <div className='col-sm-6'>
                             <label>Manufacturer</label>
                             <select id={FILTER_SELECT_ID} className="form-control" onChange={this.filter}>
                                 <option value='' defaultValue>All</option>

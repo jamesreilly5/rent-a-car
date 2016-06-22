@@ -66,7 +66,7 @@ var CarList = React.createClass({
         return (
             <div clasName='container god-directory'>
                 <section className='hero jumbotron'>
-                    <h1 className='text-center'>Ultimate rental directory</h1>
+                    <h1 className='text-center'>Ultimate Car Rental Directory</h1>
                     <h2 className='text-center'>Awesome cars, without the loan sharks</h2>
                     <FilterPanel sort={this.sort} defaultSort={DEFAULT_SORT} filter={this.filter} />
                 </section>

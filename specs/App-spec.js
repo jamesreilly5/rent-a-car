@@ -7,7 +7,7 @@ describe("App", function() {
 
     it("renders the text 'Hellow World'", function() {
         var app = TestUtils.renderIntoDocument(React.createElement(App));
-        expect(ReactDOM.findDOMNode(app).textContent).toContain('Ultimate rental directory');
+        expect(ReactDOM.findDOMNode(app).textContent).toContain('Ultimate Car Rental Directory');
     });
 
 });
