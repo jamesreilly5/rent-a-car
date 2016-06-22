@@ -8,7 +8,7 @@ var FilterPanel = require('./FilterPanel');
 
 var JsonParser = require('./../JSONParser');
 var Api = require('./../ApiClient');
-var FilterUtils = require('./../FilterUtils');
+var SortUtils = require('./../SortUtils');
 
 var format = require('date-format');
 
@@ -33,7 +33,7 @@ var CarList = React.createClass({
     handleApiSearchSuccess: function(event) {
         var parsedData = JsonParser.parse(event.body)
         this.setState({
-            carList: FilterUtils.sortBy(parsedData['suppliers'], DEFAULT_SORT),
+            carList: SortUtils.sortBy(parsedData['suppliers'], DEFAULT_SORT),
             pickupInfo: parsedData.pickupInfo
         });
     },
@@ -44,14 +44,14 @@ var CarList = React.createClass({
 
     sort: function(property) {
         this.setState({
-            carList: FilterUtils.sortBy(this.state.carList, property),
+            carList: SortUtils.sortBy(this.state.carList, property),
             pickupInfo: this.state.pickupInfo
         });
     },
 
     filter: function(property, value) {
         this.setState({
-            carList: FilterUtils.filterBy(this.state.carList, property, value),
+            carList: SortUtils.filterBy(this.state.carList, property, value),
             pickupInfo: this.state.pickupInfo
         });
     },
