@@ -1,7 +1,7 @@
 # rent-a-car
 React app that displays a JSON feed of rental cars. The app was built for a technical test for a front end position.
 
-![Alt text](/screenshot.png?raw=true "Parser of the Gods App")
+![Alt text](/screenshot.jpg?raw=true "Parser of the Gods App")
 
 ### Dependencies
 * Node/npm
