@@ -31,6 +31,7 @@ Run `NODE_ENV=production gulp deploy`
 * The grid doesn't stack nicely when cards are expanded (via more info). Needs a system of either splitting into rows or a fluid layout that lets the cards stack nicer
 * There's a null check in FilterPanel for the element for _componentDidMount_. This is done because the dropdown doesn't get rendered in phantomjs. Ideally I'd stub this using Jest or react-jasmine but time was an issue so I parked it.
 * Testing of components using Jest
+* Null checks for nested elements in the parser or casting invalid types
 
 ## Problem - Assessment for front end developer:
 
