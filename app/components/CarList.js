@@ -4,6 +4,7 @@ var Car = require('./Car');
 var Spinner = require('./Error');
 var Spinner = require('./Spinner');
 var PickupInfo = require('./PickupInfo');
+var FilterPanel = require('./FilterPanel');
 
 var JsonParser = require('./../JSONParser');
 var Api = require('./../ApiClient');
@@ -40,26 +41,16 @@ var CarList = React.createClass({
         this.setState({ error: event.body['error'] });
     },
 
-    currentSortProperty: function() {
-        var e = document.getElementById('car-sorter');
-        return e.options[e.selectedIndex].value;
-    },
-
-    currentFilterProperty: function() {
-        var e = document.getElementById('car-filter');
-        return e.options[e.selectedIndex].value;
-    },
-
-    sort: function(e) {
+    sort: function(property) {
         this.setState({
-            carList: SortUtils.sortBy(this.state.carList, this.currentSortProperty()),
+            carList: SortUtils.sortBy(this.state.carList, property),
             pickupInfo: this.state.pickupInfo
         });
     },
 
-    filter: function(e) {
+    filter: function(property, value) {
         this.setState({
-            carList: SortUtils.filterBy(this.state.carList, 'description', this.currentFilterProperty()),
+            carList: SortUtils.filterBy(this.state.carList, property, value),
             pickupInfo: this.state.pickupInfo
         });
     },
@@ -76,34 +67,7 @@ var CarList = React.createClass({
                 <section className='hero jumbotron'>
                     <h1 className='text-center'>Ultimate rental directory</h1>
                     <h2 className='text-center'>Awesome cars, without the loan sharks</h2>
-
-                    <div className='row'>
-                        <div className='col-md-8 col-md-offset-2 search-options'>
-                            <div className='row'>
-                                <div className='col-md-6'>
-                                    <label>Sort by</label>
-                                    <select id='car-sorter' className="form-control" onChange={this.sort}>
-                                        <option value='rate' defaultValue>Lowest Price</option>
-                                        <option value='doors'>Number of doors</option>
-                                        <option value='bags'>Bag Capacity</option>
-                                    </select>
-                                </div>
-                                <div className='col-md-6'>
-                                    <label>Manufacturer</label>
-                                    <select id='car-filter' className="form-control" onChange={this.filter}>
-                                        <option value='' defaultValue>All</option>
-                                        <option value='Cadillac' defaultValue>Cadillac</option>
-                                        <option value='Chevrolet' defaultValue>Chevrolet</option>
-                                        <option value='Chrysler' defaultValue>Chrysler</option>
-                                        <option value='Ford' defaultValue>Ford</option>
-                                        <option value='Kia' defaultValue>Kia</option>
-                                        <option value='Toyota' defaultValue>Toyota</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <FilterPanel sort={this.sort} filter={this.filter} />
                 </section>
 
                 <section>
