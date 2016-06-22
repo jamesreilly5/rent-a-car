@@ -1,5 +1,26 @@
 # rent-a-car
-React app that displays a JSON feed of rental cars
+React app that displays a JSON feed of rental cars. The app was built for a technical test for a front end position.
+
+![Alt text](/screenshot.png?raw=true "Parser of the Gods App")
+
+### Dependencies
+* Node/npm
+* Gulp
+
+### Development
+**Running the app**
+
+- Run `npm install`
+- Run `NODE_ENV=development gulp`
+- Go to `localhost:8889` to display the app
+
+**Run tests in browser**
+
+Go to `localhost:8889/testrunner.html` to see your tests
+
+**Minify the code, ready for production**
+
+Run `NODE_ENV=production gulp deploy`
 
 ## Problem - Assessment for front end developer:
 

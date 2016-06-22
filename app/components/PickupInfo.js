@@ -4,7 +4,6 @@ var PickupInfo = React.createClass({
 	render: function() {
 		return (
         	<div className='row car-details'>
-
 				<h3 className='text-center'>Pickup Info</h3>
 				<div className='col-md-4 car-stat'>
 					<div className='row'>
